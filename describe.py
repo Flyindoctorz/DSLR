@@ -30,6 +30,7 @@ def emptyfiller(dataset: str):
 
 
 def normalizer(dataset: str):
+    """normalize the datas inside"""
     df = load(dataset)
     ignore = ["Index", "Hogwarts House", "First Name", "Last Name", "Birthday", "Best Hand"]
     for column in df.columns:
@@ -40,6 +41,41 @@ def normalizer(dataset: str):
         for i, value in enumerate(df[column]):
             df.at[i, column] = (value - mean) / std
         return df.to_csv("dataset_normalised", index=False)
+
+def describe(dataset: str):
+    """takes a dataset and return some stats"""
+    df = load(dataset)
+    ignore = ["Index", "Hogwarts House", "First Name", "Last Name", "Birthday", "Best Hand"]
+    columns = []
+    means = []
+    stds = []
+    mins = []
+    q1s = []
+    q2s = []
+    q3s = []
+    maxs = []
+    for column in df.columns:
+        if column in ignore:
+            continue
+        columns.append(column)
+        mean.append(get_mean(*df[column]))
+        std.append(get_std(*df[column]))
+        mins.append(get_min(*df[column]))
+        q1s.append(get_q1(*df[column]))
+        q2.append(get_q2(*df[column]))
+        q3.append(get_q3(*df[column]))
+        maxs.append(get_max(*df[column]))
+    print(f"{'':10}", end="")
+    for col in columns:
+        print(f"{col:15}", end="")
+    print()
+    print(f"{'Mean':10}", end="")
+    for mean in means:
+        print(f"{mean:<15.6f}", end="")
+    print()
+
+
+        
 
 
     

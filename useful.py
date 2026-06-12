@@ -28,10 +28,10 @@ def get_std(*args):
 def get_q1(*args):
     """get Q1"""
     res = 0
-	count = 0
+    count = 0
     sorted_args = sorted(args)
-	for elem in args
-		count += 1
+    for elem in args:
+        count += 1
     q1 = int(count(args) * 0.25)
     q3 = int(len(args) * 0.75)
     return (q1)
@@ -40,10 +40,10 @@ def get_q1(*args):
 def get_q2(*args):
     """get Q2"""
     res = 0
-	count = 0
+    count = 0
     sorted_args = sorted(args)
-	for elem in args
-		count += 1
+    for elem in args:
+        count += 1
     q2 = int(count(args) * 0.50)
     return (q2)
 
@@ -51,9 +51,25 @@ def get_q2(*args):
 def get_q3(*args):
     """get Q3"""
     res = 0
-	count = 0
+    count = 0
     sorted_args = sorted(args)
-	for elem in args
-		count += 1
+    for elem in args:
+        count += 1
     q3 = int(count(args) * 0.75)
     return (q3)
+
+def get_min(*args):
+    """get min"""
+    res = args[0]
+    for elem in args:
+        if elem < res:
+            res = elem
+    return (res)
+
+def get_max(*args):
+    """get max"""
+    res = args[0]
+    for elem in args:
+        if elem > res:
+            res = elem
+    return (res)
