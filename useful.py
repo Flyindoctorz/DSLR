@@ -27,36 +27,31 @@ def get_std(*args):
 
 def get_q1(*args):
     """get Q1"""
-    res = 0
     count = 0
     sorted_args = sorted(args)
     for elem in args:
         count += 1
-    q1 = int(count(args) * 0.25)
-    q3 = int(len(args) * 0.75)
-    return (q1)
+    q1 = int(count * 0.25)
+    return (sorted_args[q1])
 
 
 def get_q2(*args):
     """get Q2"""
-    res = 0
     count = 0
     sorted_args = sorted(args)
     for elem in args:
         count += 1
-    q2 = int(count(args) * 0.50)
-    return (q2)
-
+    q2 = int(count * 0.25)
+    return (sorted_args[q2])
 
 def get_q3(*args):
     """get Q3"""
-    res = 0
     count = 0
     sorted_args = sorted(args)
     for elem in args:
         count += 1
-    q3 = int(count(args) * 0.75)
-    return (q3)
+    Q3 = int(count * 0.25)
+    return (sorted_args[Q3])
 
 def get_min(*args):
     """get min"""
