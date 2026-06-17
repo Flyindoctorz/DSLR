@@ -47,6 +47,7 @@ def normalizer(dataset: str):
             df.at[i, column] = (value - mean) / std
         return df.to_csv("dataset_normalised.csv", index=False)
 
+
 def describe(dataset: str):
     """takes a dataset and return some stats"""
     df = emptyfiller(dataset)

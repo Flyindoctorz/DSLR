@@ -41,7 +41,7 @@ def get_q2(*args):
     sorted_args = sorted(args)
     for elem in args:
         count += 1
-    q2 = int(count * 0.25)
+    q2 = int(count * 0.50)
     return (sorted_args[q2])
 
 def get_q3(*args):
@@ -50,7 +50,7 @@ def get_q3(*args):
     sorted_args = sorted(args)
     for elem in args:
         count += 1
-    Q3 = int(count * 0.25)
+    Q3 = int(count * 0.75)
     return (sorted_args[Q3])
 
 def get_min(*args):
