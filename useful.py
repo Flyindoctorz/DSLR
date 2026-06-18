@@ -68,3 +68,29 @@ def get_max(*args):
         if elem > res:
             res = elem
     return (res)
+
+def get_cov(x, y):
+    """get covariance"""
+    total = 0
+    count = 0
+    meanx = get_mean(*x)
+    meany = get_mean(*y)
+    for xi, yi in zip(x, y):
+        total += (xi - meanx) * (yi - meany)
+        count +=1
+    return (total / count)
+
+def get_corr(x, y):
+    """get correlation"""
+    corr = get_cov(x, y) / (get_std(*x) * get_std(*y))
+    return (corr)
+
+def main():
+    x = [1, 2, 3, 4, 5]
+    y = [2, 4, 6, 8, 10]
+    res = get_corr(x, y)
+    print(f"{res}")
+
+
+if __name__ == "__main__":
+    main()
